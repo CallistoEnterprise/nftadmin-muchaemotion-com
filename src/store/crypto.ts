@@ -3,7 +3,7 @@
 import { ethers } from 'ethers'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import contractABI from '../../artifacts/contracts/Mucha.sol/MuchaNFT.json'
-const contractAddress = '0xd0725743f665B8041DcfbB0c4B55bbC3679Fb033'
+const contractAddress = '0xA90e3Aa4ee96923caaD00850a3d065728EFE658B'
 export const useCryptoStore = defineStore('user', () => {
   const account = ref(null)
   const chainID = ref()
@@ -178,8 +178,8 @@ export const useCryptoStore = defineStore('user', () => {
   async function getChain() {
     await provider.getNetwork()
       .then((res) => {
-        // chainID.value = res.chainId === 20729
-        chainID.value = res.chainId === 820
+        chainID.value = res.chainId === 20729
+        // chainID.value = res.chainId === 820
       })
       .catch(console.log)
   }
@@ -228,15 +228,15 @@ export const useCryptoStore = defineStore('user', () => {
           await ethereum.request({
             method: 'wallet_addEthereumChain',
             params: [{
-              chainId: '0x334',
-              chainName: 'Callisto',
+              chainId: '0x50F9',
+              chainName: 'Callisto TestNet',
               nativeCurrency: {
                 name: 'Callisto',
                 symbol: 'CLO',
                 decimals: 18,
               },
-              rpcUrls: ['https://rpc.callisto.network/'],
-              blockExplorerUrls: ['https://explorer.callisto.network/'],
+              rpcUrls: ['https://testnet-rpc.callisto.network/'],
+              blockExplorerUrls: ['https://testnet-explorer.callisto.network/'],
             }],
           })
         }

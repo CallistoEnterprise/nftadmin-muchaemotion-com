@@ -24,7 +24,7 @@ onMounted(() => {
 <template>
   <div class="flex flex-col items-center">
     <h1 class="text-2xl m-4">
-      Artefin Admin Page
+      Mucha Test Admin Page
     </h1>
     <div v-if="account && chainID">
       <h2>
